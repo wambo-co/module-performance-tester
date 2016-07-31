@@ -20,7 +20,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Wambo\\Test\\": "src/Wambo/PerformanceTester/"
+      "Wambo\\PerformanceTester\\": "src/Wambo/PerformanceTester/"
     }
   },
   "require": {
