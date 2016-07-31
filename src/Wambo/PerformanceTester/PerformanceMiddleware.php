@@ -30,25 +30,6 @@ class PerformanceMiddleware
         $usedMemory = memory_get_peak_usage(true);
         $usedMemoryMB = $usedMemory / 1024 / 1024;
 
-        $color = 'lightgreen';
-        if($timeInMs > 100){
-            $color = 'yellow';
-        }
-        if($timeInMs > 200){
-            $color = 'red';
-        }
-
-        $css = 'background:'.$color;
-
-        $msg = '<div class="performance_footer" style="'.$css.'">' .
-                sprintf('Request duration: %sms', number_format($timeInMs, 2)) .
-                ' || ' .
-                sprintf('Memory usage (peak): %s', number_format($usedMemoryMB, 2)) .
-                '<div>';
-
-
-        $response->getBody()->write($msg);
-
         $response = $response->withHeader('X-PHP-Duration', $timeInMs);
         $response = $response->withHeader('X-PHP-Memory-Peak', $usedMemoryMB);
 
