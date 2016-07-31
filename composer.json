@@ -1,0 +1,33 @@
+{
+  "name": "wambo/module-performance-tester",
+  "description": "a wambo module to measure performance of requests",
+  "type": "wambo-module",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "René Penner",
+      "email": "rene@penner.name",
+      "role": "Developer"
+    },
+    {
+      "name": "Andy Koch",
+      "email": "andyk7@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "extra": {
+    "class": "Wambo\\PerformanceTester\\Registration"
+  },
+  "autoload": {
+    "psr-4": {
+      "Wambo\\Test\\": "src/Wambo/PerformanceTester/"
+    }
+  },
+  "require": {
+    "wambo/wambo-composer-installer": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "5.4.*"
+  },
+  "minimum-stability": "dev"
+}
